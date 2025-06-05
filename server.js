@@ -11,11 +11,17 @@ app.use(express.static(__dirname));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-const db = mongoose.createConnection('mongodb+srv://thisizneodev:4UjXUJ4zPbxR2tH4@cluster0.rv813dt.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
-
-db.on('connected', () => {
-    console.log("Db is connected successfully")
+mongoose.connect('mongodb+srv://thisizneodev:4UjXUJ4zPbxR2tH4@cluster0.rv813dt.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
 })
+.then(() => {
+    console.log('DB connected successfully');
+})
+.catch((err) => {
+    console.error('DB connection error:', err);
+});
+
 
 app.get("/", (req,res) => {
     res.sendFile(path.join(__dirname, 'index.html'))
@@ -32,7 +38,7 @@ const jobsSchema = new mongoose.Schema({
     cv: String,
 })
 
-const Jobs = mongoose.model("JobsData", jobsSchema)
+const Jobs = mongoose.model("JobsData", jobsSchema);
 
 app.post('/Applying', async (req, res) => {
     const {fn, ea, ad, ct, zp, tph, sd, cv} = req.body
