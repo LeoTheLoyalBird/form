@@ -8,46 +8,67 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h2>Simple Job Application Form</h2>
-    <form action="">
-      <div>
-        <label for="fn">Full name</label>
-        <input type="text" name="fn" id="fn" placeholder="Enter your Full name"/>
-        
-      </div>
-      <div>
-        <label for="ea">Email adress</label>
-        <input type="email" name="ea" id="ea" placeholder="Example@domain.com"/>
-      </div>
-      <div>
-        <label for="ad">Adress</label>
-        <input type="text" name="ad" id="ad" placeholder="Lomas Santa Fe Dr 118b"/>
-      </div>
-      <div class="city">
-        <div class="madina">
+    <div class="main">
+      <h2>Simple Job Application Form</h2>
+      <form action="">
+        <div>
+          <label for="fn">Full name</label>
+          <input
+            type="text"
+            name="fn"
+            id="fn"
+            placeholder="Enter your Full name" required
+          />
+        </div>
+        <div>
+          <label for="ea">Email adress</label>
+          <input
+            type="email"
+            name="ea"
+            id="ea"
+            placeholder="Example@domain.com" required
+          />
+        </div>
+        <div>
+          <label for="ad">Adress</label>
+          <input
+            type="text"
+            name="ad"
+            id="ad"
+            placeholder="Lomas Santa Fe Dr 118b" required
+          />
+        </div>
+        <div class="city">
+          <div class="madina">
             <label for="ct">City</label>
-            <input type="text" name="ct" id="ct" placeholder="Solana Beach"/>
-        </div>
-        <div class="space">
+            <input type="text" name="ct" id="ct" placeholder="Solana Beach" required/>
+          </div>
+          <div class="space">
             <label for="zp">Zip</label>
-            <input type="number" name="zp" id="zp" placeholder="92075"/>
+            <input type="number" name="zp" id="zp" placeholder="92075" required />
+          </div>
         </div>
-      </div>
-      <div class="tlphn">
-        <label for="tph">Telephone</label>
-        <input type="number" name="tph" id="tph" placeholder="1-(984) 866-8126"/>
-      </div>
-      <div class="tlphn">
-        <label for="sd">Start date</label>
-        <input type="date" name="sd" id="sd" placeholder="dd/mm/yyyy"/>
-      </div>
-      <div class="cv">
-        <label for="cv">Upload your CV:</label>
-        <input type="file" name="cv" id="cv" class="cv">
+        <div class="tlphn">
+          <label for="tph">Telephone</label>
+          <input
+            type="number"
+            name="tph"
+            id="tph"
+            placeholder="1-(984) 866-8126" required
+          />
+        </div>
+        <div class="tlphn">
+          <label for="sd">Start date</label>
+          <input type="date" name="sd" id="sd" placeholder="dd/mm/yyyy" required/>
+        </div>
+        <div class="cv">
+          <label for="cv">Upload CV:</label>
+          <input type="file" name="cv" id="cv" class="cv" required />
+        </div>
+        <div class="submit">
+          <input type="submit" value="Apply now" id="st" />
+        </div>
+      </form>
     </div>
-    <div class="submit">
-        <input type="submit" value="Apply now" id="st">
-    </div>
-    </form>
   </body>
 </html>
