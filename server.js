@@ -1,5 +1,4 @@
 const express = require("express");
-const { url } = require("inspector");
 const mongoose = require("mongoose");
 const path = require("path")
 
@@ -11,10 +10,7 @@ app.use(express.static(__dirname));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-mongoose.connect('mongodb+srv://thisizneodev:4UjXUJ4zPbxR2tH4@cluster0.rv813dt.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-})
+mongoose.connect('mongodb+srv://thisizneodev:4UjXUJ4zPbxR2tH4@cluster0.rv813dt.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
 .then(() => {
     console.log('DB connected successfully');
 })
